@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: 'python3 -m venv venv'
       - run: '. venv/bin/activate'
-      - run: 'python setup install'
+      - run: 'python setup.py install'
       - run: 'pip install pylint'
       - run: 'pylint tap_salesforce -d missing-docstring,invalid-name,line-too-long,too-many-locals,too-few-public-methods,fixme'
   test:
