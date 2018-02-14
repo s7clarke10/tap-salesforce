@@ -5,13 +5,10 @@ jobs:
       - image: circleci/python:3.4.8-jessie-browsers
     steps:
       - checkout
-      - run:
-        name: 'Setup Virtual Env'
-        command: |
-                 python3 -m venv venv
-                 . venv/bin/activate
-                 python setup install
-                 pip install pylint
+      - run: 'python3 -m venv venv'
+      - run: '. venv/bin/activate'
+      - run: 'python setup install'
+      - run: 'pip install pylint'
       - run: 'pylint tap_salesforce -d missing-docstring,invalid-name,line-too-long,too-many-locals,too-few-public-methods,fixme'
   test:
     docker:
