@@ -45,7 +45,6 @@ CONFIG = {
     'client_id': None,
     'client_secret': None,
     'start_date': None
-    'api_version': 41
 }
 
 FORCED_FULL_TABLE = {
