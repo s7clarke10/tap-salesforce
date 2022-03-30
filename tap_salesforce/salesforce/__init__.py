@@ -81,26 +81,6 @@ UNSUPPORTED_BULK_API_SALESFORCE_OBJECTS = set(['AssetTokenEvent',
                                                'OrderStatus'])
 
 # The following objects have certain WHERE clause restrictions so we exclude them.
-QUERY_RESTRICTED_SALESFORCE_OBJECTS = set(['ContentDocumentLink',
-                                           'CollaborationGroupRecord',
-                                           'Vote',
-                                           'IdeaComment',
-                                           'FieldDefinition',
-                                           'PlatformAction',
-                                           'UserEntityAccess',
-                                           'RelationshipInfo',
-                                           'ContentFolderMember',
-                                           'ContentFolderItem',
-                                           'SearchLayout',
-                                           'EntityParticle',
-                                           'OwnerChangeOptionInfo',
-                                           'DataStatistics',
-                                           'UserFieldAccess',
-                                           'PicklistValueInfo',
-                                           'RelationshipDomain',
-                                           'FlexQueueItem'])
-
-# The following objects are not supported by the query method being used.
 QUERY_RESTRICTED_SALESFORCE_OBJECTS = set(['Announcement',
                                            'ContentDocumentLink',
                                            'CollaborationGroupRecord',
@@ -129,6 +109,31 @@ QUERY_RESTRICTED_SALESFORCE_OBJECTS = set(['Announcement',
                                            'AppTabMember',
                                            'ColorDefinition',
                                            'IconDefinition',])
+
+# The following objects are not supported by the query method being used.
+QUERY_INCOMPATIBLE_SALESFORCE_OBJECTS = set(['DataType',
+                                             'ListViewChartInstance',
+                                             'FeedLike',
+                                             'OutgoingEmail',
+                                             'OutgoingEmailRelation',
+                                             'FeedSignal',
+                                             'ActivityHistory',
+                                             'EmailStatus',
+                                             'UserRecordAccess',
+                                             'Name',
+                                             'AggregateResult',
+                                             'OpenActivity',
+                                             'ProcessInstanceHistory',
+                                             'OwnedContentDocument',
+                                             'FolderedContentDocument',
+                                             'FeedTrackedChange',
+                                             'CombinedAttachment',
+                                             'AttachedContentDocument',
+                                             'ContentBody',
+                                             'NoteAndAttachment',
+                                             'LookedUpFromActivity',
+                                             'AttachedContentNote',
+                                             'QuoteTemplateRichTextData'])
 
 def log_backoff_attempt(details):
     LOGGER.info("ConnectionError detected, triggering backoff: %d try", details.get("tries"))
