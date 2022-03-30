@@ -155,7 +155,7 @@ def field_to_property_schema(field, mdata):
             "latitude": {"type": ["null", "number"]},
             "geocodeAccuracy": {"type": ["null", "string"]}
         }
-    elif sf_type == "int":
+    elif sf_type in ("int", "long"):
         property_schema['type'] = "integer"
     elif sf_type == "time":
         property_schema['type'] = "string"
